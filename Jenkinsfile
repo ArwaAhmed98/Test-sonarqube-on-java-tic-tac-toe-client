@@ -1,11 +1,11 @@
 pipeline {
     agent any
     stages {
-        stage('sonarqube'){
+        stage('sonarQube'){
             steps {
                 script {
                     def pipelineConfig=[
-                        sonarQubeServer: 'sq-server',
+                        sonarQubeServer: 'sonarQube',
                     ]
                     def repositoryUrl = scm.userRemoteConfigs[0].getUrl()
                     def GIT_REPO_NAME = scm.userRemoteConfigs[0].getUrl().tokenize('/').last().split("\\.")[0]
